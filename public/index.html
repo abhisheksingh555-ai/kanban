@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kanban – multi-tenant</title><link rel="stylesheet" href="style.css">
+</head><body>
+<div id="login" class="login" hidden>
+  <div class="login-card">
+    <h1>Sign in</h1>
+    <label>Email<input id="email" value="carol@acme.test" autocomplete="username"></label>
+    <label>Password<input id="password" type="password" value="password123" autocomplete="current-password"></label>
+    <button id="loginBtn" class="primary">Sign in</button>
+    <p id="loginErr" class="err"></p>
+    <p class="hint">Demo users (password <code>password123</code>): alice@acme.test (org admin), bob@acme.test (tenant admin, New York), carol@acme.test (member, New York), dave@acme.test (member, London), erin@globex.test (org admin, Globex)</p>
+  </div>
+</div>
+<div id="app" hidden>
+  <header>
+    <select id="orgSel" title="Organization"></select>
+    <select id="tenSel" title="Tenant (branch)"></select>
+    <select id="boardSel" title="Board"></select>
+    <span id="adminBtns"></span>
+    <span class="spacer"></span>
+    <span id="presence" title="People online in this tenant"></span>
+    <button id="undoBtn" title="Undo (Ctrl+Z)">Undo</button>
+    <button id="redoBtn" title="Redo (Ctrl+Shift+Z)">Redo</button>
+    <button id="actBtn">Activity</button>
+    <span id="status" class="status" title="Connection"></span>
+    <button id="logout">Sign out</button>
+  </header>
+  <main><div id="board" class="board"></div><aside id="panel" class="panel" hidden></aside></main>
+  <aside id="activity" class="activity" hidden></aside>
+</div>
+<div id="toast" class="toast" role="status"></div>
+<script src="app.js"></script>
+</body></html>
